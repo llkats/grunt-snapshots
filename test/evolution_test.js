@@ -1,6 +1,7 @@
 'use strict';
 
-var grunt = require('grunt');
+var grunt = require('grunt'),
+    server = require('server');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
