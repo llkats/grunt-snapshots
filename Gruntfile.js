@@ -28,6 +28,16 @@ module.exports = function(grunt) {
       tests: ['tmp'],
     },
 
+    connect: {
+      server: {
+        options: {
+          hostname: 'localhost',
+          port: 9001,
+          base: 'test/fixtures',
+        },
+      },
+    },
+
     // Configuration to be run (and then tested).
     evolution: {
       default_options: {
@@ -37,9 +47,10 @@ module.exports = function(grunt) {
       custom_options: {
         options: {
           filename: 'pic',
-          path: 'pics/',
+          path: 'tmp/custom/pics',
           extension: 'png',
-          url: 'http://localhost:3001',
+          url: 'http://localhost:9001',
+          unique: false
         },
       },
     },
@@ -55,13 +66,14 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'evolution', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'connect', 'evolution', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'evolution']);

@@ -1,7 +1,6 @@
 'use strict';
 
-var grunt = require('grunt'),
-    server = require('server');
+var grunt = require('grunt');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -25,24 +24,21 @@ var grunt = require('grunt'),
 
 exports.evolution = {
   setUp: function(done) {
-    // setup here if necessary
     done();
   },
   default_options: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/default/screenshots');
-    var expected = grunt.file.read('test/expected/screenshots');
-    test.equal(actual, expected, 'A screenshot of http://www.google.com should exist in the correct folder.');
+    var actual = grunt.file.exists('tmp/default/screenshots/google.png');
+    test.ok(actual, 'A screenshot of http://www.google.com should exist in the correct folder.');
 
     test.done();
   },
   custom_options: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('pics/');
-    var expected = grunt.file.read('test/expected/custom');
-    test.equal(actual, expected, 'A screenshot of http://www.google.com should exist in the correct folder.');
+    var actual = grunt.file.exists('tmp/custom/pics/pic.png');
+    test.ok(actual, 'A screenshot of http://localhost:9001/ should exist in the correct folder.');
 
     test.done();
   },
