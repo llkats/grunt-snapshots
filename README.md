@@ -28,55 +28,90 @@ grunt.initConfig({
     options: {
       // Task-specific options go here.
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
   },
 })
 ```
 
 ### Options
 
-#### options.separator
+        filename: 'pic',
+        path: 'tmp/custom/pics',
+        extension: 'png',
+        url: 'http://localhost:9001',
+        unique: false
+
+#### options.filename
 Type: `String`
-Default value: `',  '`
+Default value: `'pic'`
 
 A string value that is used to do something with whatever.
 
-#### options.punctuation
+#### options.path
 Type: `String`
-Default value: `'.'`
+Default value: `'tmp/default/screenshots'`
 
-A string value that is used to do something else with whatever else.
+Path to the folder in which to keep screenshots.
+
+#### options.extension
+Type: `String`
+Default value: `'png'`
+
+File extension to write to. Valid formats are `'gif', 'jpeg', 'pdf', and 'png'`.
+
+#### options.url
+Type: `String`
+Default value: `'http://www.google.com'`
+
+The URL of which to take screenshots. Use Grunt's `grunt-contrib-connect` Plugin to open a server to test localhost.
+
+#### options.unique
+Type: `Boolean`
+Default value: `false`
+
+This option will append a random string of alphanumeric characters to the end of each screenshot's filename.
+
+#### options.timestamp
+Type: `Boolean`
+Default value: `false`
+
+This option will append a Unix timestamp to the end of each screenshot's filename.
+
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+This example will place a png screenshot of http://www.google.com inside a tmp/default/screenshots folder.
 
 ```js
 grunt.initConfig({
   snapshots: {
     options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
   },
 })
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+In this example, a screenshot is taken of a test index.html file is served on http://localhost:9001 from the `test/fixtures` folder.
 
 ```js
 grunt.initConfig({
+  connect: {
+    server: {
+      options: {
+        hostname: 'localhost',
+        port: 9001,
+        base: 'test/fixtures',
+      },
+    },
+  },
   snapshots: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      filename: 'pic',
+      path: 'tmp/custom/pics',
+      extension: 'png',
+      url: 'http://localhost:9001',
+      unique: false,
+      timestamp: true
     },
   },
 })
@@ -86,4 +121,4 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+0.1.0 Initial release.
