@@ -1,8 +1,8 @@
 {
-  "name": "grunt-evolution",
+  "name": "grunt-snapshots",
   "description": "Take screenshots of your evolving front-end periodically during development.",
   "version": "0.1.0",
-  "homepage": "https://github.com/llkats/grunt-evolution",
+  "homepage": "https://github.com/llkats/grunt-snapshots",
   "author": {
     "name": "Lydia Katsamberis",
     "email": "llkats@gmail.com",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/llkats/grunt-evolution.git"
+    "url": "git://github.com/llkats/grunt-snapshots.git"
   },
   "bugs": {
-    "url": "https://github.com/llkats/grunt-evolution/issues"
+    "url": "https://github.com/llkats/grunt-snapshots/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/llkats/grunt-evolution/blob/master/LICENSE-MIT"
+      "url": "https://github.com/llkats/grunt-snapshots/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
@@ -43,5 +43,11 @@
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "dependencies": {
+    "phantom": "~0.5.0",
+    "grunt": "~0.4.1",
+    "connect": "~2.7.11",
+    "grunt-contrib-connect": "~0.3.0"
+  }
 }
