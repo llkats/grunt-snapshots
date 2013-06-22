@@ -11,7 +11,7 @@
 module.exports = function(grunt) {
   var phantom = require('phantom');
 
-  grunt.registerMultiTask('snapshots', 'Take a screenshot of a URL', function() {
+  grunt.registerTask('snapshots', 'Take a screenshot of a URL', function() {
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
@@ -31,7 +31,6 @@ module.exports = function(grunt) {
       }
       return result;
     };
-
 
     // Force task into async mode and grab a handle to the "done" function.
     var done = this.async();
