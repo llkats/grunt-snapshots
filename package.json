@@ -8,6 +8,12 @@
     "email": "llkats@gmail.com",
     "url": "http://www.llkats.com"
   },
+   "contributors": [
+    {
+      "name": "Jon Ursenbach",
+      "email": "jon@ursenba.ch"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/llkats/grunt-snapshots.git"
@@ -46,8 +52,6 @@
   ],
   "dependencies": {
     "phantom": "~0.5.0",
-    "grunt": "~0.4.1",
-    "connect": "~2.7.11",
-    "grunt-contrib-connect": "~0.3.0"
+    "grunt": "~0.4.1"
   }
 }
