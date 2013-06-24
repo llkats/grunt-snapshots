@@ -17,7 +17,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-snapshots');
 ```
 
-*Note*
+##### Note
 You must also have PhantomJS installed and have the `phantom` executable in your PATH. See the [PhantomJS home](http://phantomjs.org/) for installation instructions.
 
 ## The "snapshots" task
