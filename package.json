@@ -8,7 +8,7 @@
     "email": "llkats@gmail.com",
     "url": "http://www.llkats.com"
   },
-   "contributors": [
+  "contributors": [
     {
       "name": "Jon Ursenbach",
       "email": "jon@ursenba.ch"
@@ -45,7 +45,7 @@
   },
   "peerDependencies": {
     "phantom": "~0.5.0",
-    "grunt": "~0.4.1"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin"
